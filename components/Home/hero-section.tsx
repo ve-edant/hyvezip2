@@ -77,7 +77,7 @@ const HeroSection = () => {
                 >
                   {/* Productivity Card */}
                   <motion.div
-                    className="w-full bg-white/95 backdrop-blur-xl rounded-2xl shadow-2xl overflow-hidden border border-gray-100 z-30"
+                    className="w-full bg-white/95 backdrop-blur-xl rounded-2xl shadow-lg overflow-hidden border border-gray-100 z-30"
                     initial={{ opacity: 0, y: 50 }}
                     animate={{
                       opacity: 1,
@@ -96,7 +96,7 @@ const HeroSection = () => {
 
                   {/* Live Activity Card */}
                   <motion.div
-                    className="w-full bg-white/95 backdrop-blur-xl rounded-2xl shadow-2xl overflow-hidden border border-gray-100 z-30"
+                    className="w-full bg-white/95 backdrop-blur-xl rounded-2xl shadow-lg overflow-hidden border border-gray-100 z-30"
                     initial={{ opacity: 0, y: 50 }}
                     animate={{
                       opacity: 1,
@@ -129,7 +129,7 @@ const HeroSection = () => {
                 >
                   {/* AI Insights Card */}
                   <motion.div
-                    className="w-full bg-white/95 backdrop-blur-xl rounded-2xl shadow-2xl overflow-hidden border border-gray-100 z-30"
+                    className="w-full bg-white/95 backdrop-blur-xl rounded-2xl shadow-lg overflow-hidden border border-gray-100 z-30"
                     initial={{ opacity: 0, y: 50 }}
                     animate={{
                       opacity: 1,
@@ -149,7 +149,7 @@ const HeroSection = () => {
 
                   {/* Today's Summary Card */}
                   <motion.div
-                    className="w-full bg-white/95 backdrop-blur-xl rounded-2xl shadow-2xl overflow-hidden border border-gray-100 z-30"
+                    className="w-full bg-white/95 backdrop-blur-xl rounded-2xl shadow-lg overflow-hidden border border-gray-100 z-30"
                     initial={{ opacity: 0, y: 50 }}
                     animate={{
                       opacity: 1,

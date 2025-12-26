@@ -2,10 +2,17 @@
 
 import { motion } from "framer-motion"
 import { Frown, Zap } from "lucide-react"
+import { Montserrat } from "next/font/google";
+
+const montserrat400 = Montserrat({
+  subsets: ["latin"],
+  weight: ["400"],
+});
+
 
 export function ProblemSolution() {
   return (
-    <section className="relative bg-white py-16 sm:py-20 lg:py-24 px-6 lg:px-12">
+    <section className={`${montserrat400.className} relative bg-white py-16 sm:py-20 lg:py-24 px-6 lg:px-12`}>
       <div className="max-w-7xl mx-auto">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16">
           {/* Left Column */}
@@ -22,7 +29,7 @@ export function ProblemSolution() {
             </motion.div>
 
             <motion.h2
-              className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight text-balance"
+              className="text-4xl sm:text-5xl lg:text-6xl font-medium text-gray-900 leading-tight text-balance"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}

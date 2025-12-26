@@ -8,16 +8,17 @@ import { ProblemSolution } from "@/components/Home/problem-solution";
 import StickyScrollRevealDemo from "@/components/sticky-scroll-reveal-demo";
 import { StickyScroll } from "@/components/ui/sticky-scroll-reveal";
 import { CoreFeatures } from "@/components/core-features";
+import { TabbedSection } from "@/components/Home/tabbed-section";
 
 export default function Page() {
   return (
     <div className="relative min-h-screen overflow-hidden bg-white">
       <Navbar />
       <HeroSection />
-      <Companies />
       <ProblemSolution />
       <StickyScroll />
       <CoreFeatures />
+      <TabbedSection />
       <section className="h-screen w-full bg-red-300"></section>
     </div>
   );

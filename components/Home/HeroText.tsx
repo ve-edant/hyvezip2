@@ -4,6 +4,12 @@ import { motion } from "framer-motion";
 import { Zap, Activity, CheckCircle2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { AnimatedTooltip } from "@/components/Home/animated-tooltip";
+import { Montserrat } from "next/font/google";
+
+const montserrat400 = Montserrat({
+  subsets: ["latin"],
+  weight: ["400"],
+});
 
 const HeroText = () => {
   const users = [
@@ -40,9 +46,11 @@ const HeroText = () => {
   ];
 
   return (
-    <div className="space-y-5 lg:space-y-6 order-2 lg:order-1 z-10">
+    <div
+      className={`${montserrat400.className} space-y-5 lg:space-y-6 order-2 lg:order-1 z-10`}
+    >
       <motion.div
-        className="flex items-center gap-2 text-[#f1ac13] font-medium"
+        className="flex items-center gap-2 text-[#f1ac13] font-semibold"
         initial={{ opacity: 0, x: -30 }}
         animate={{ opacity: 1, x: 0 }}
         transition={{ duration: 0.6, delay: 0.2 }}
@@ -56,20 +64,19 @@ const HeroText = () => {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.7, delay: 0.3 }}
       >
-        <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight text-balance">
-          Automate Tasks, Boost{" "}
-          <span className="text-[#f1ac13]">Productivity</span>, Grow Faster
+        <h1 className="text-4xl sm:text-5xl lg:text-6xl font-medium text-gray-900 leading-none text-balance">
+          Freelancing, <br /><span className="text-[#f1ac13]">Built for Teams</span>
         </h1>
       </motion.div>
 
       <motion.p
-        className="text-base sm:text-lg text-gray-700 leading-relaxed max-w-xl text-pretty"
+        className="text-base sm:text-lg text-black leading-relaxed max-w-xl text-pretty"
         initial={{ opacity: 0, y: 30 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.7, delay: 0.4 }}
       >
-        NeurFlo is an AI-powered SaaS platform that helps teams streamline
-        workflows, generate insights, and save hours of manual work every week.
+        HYVE is a team-based freelancing platform where freelancers collaborate,
+        companies hire verified teams, and payments stay secure.
       </motion.p>
 
       <motion.div
