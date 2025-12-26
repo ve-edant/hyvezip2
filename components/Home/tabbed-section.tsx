@@ -1,65 +1,84 @@
-"use client"
+"use client";
 
-import { useState } from "react"
-import { Users, Briefcase, FolderOpen, Zap, ArrowRight, Building2, Shield, TrendingUp, Clock } from "lucide-react"
-import { FeatureCard } from "./FeatureCard"
-import { ProfileCard } from "./ProfileCard"
-import { CompanyCard } from "./CompanyCard"
+import { useState } from "react";
+import {
+  Users,
+  Briefcase,
+  FolderOpen,
+  Zap,
+  ArrowRight,
+  Building2,
+  Shield,
+  TrendingUp,
+  Clock,
+} from "lucide-react";
+import { FeatureCard } from "./FeatureCard";
+import { ProfileCard } from "./ProfileCard";
+import { CompanyCard } from "./CompanyCard";
+import { motion } from "framer-motion";
 
 const tabs = [
   { id: "freelancers", label: "For Freelancers" },
   { id: "companies", label: "For Companies" },
-]
+];
 
 const freelancerFeatures = [
   {
     icon: Users,
     title: "Build or Join Teams",
-    description: "Collaborate with trusted peers and tackle bigger challenges together.",
+    description:
+      "Collaborate with trusted peers and tackle bigger challenges together.",
   },
   {
     icon: Briefcase,
     title: "Work on Large Projects",
-    description: "Access high-value, multi-skill work that solo freelancers can't reach.",
+    description:
+      "Access high-value, multi-skill work that solo freelancers can't reach.",
   },
   {
     icon: FolderOpen,
     title: "Showcase Real Work",
-    description: "Build your portfolio with verified contributions from real team projects.",
+    description:
+      "Build your portfolio with verified contributions from real team projects.",
   },
   {
     icon: Zap,
     title: "Stay Connected",
-    description: "Ongoing opportunities and network growth keep your career thriving.",
+    description:
+      "Ongoing opportunities and network growth keep your career thriving.",
   },
-]
+];
 
 const companyFeatures = [
   {
     icon: Shield,
     title: "Vetted Team Talent",
-    description: "Access pre-formed teams with proven track records and verified skills.",
+    description:
+      "Access pre-formed teams with proven track records and verified skills.",
   },
   {
     icon: TrendingUp,
     title: "Scale Instantly",
-    description: "Spin up entire teams in days, not months. Built for enterprise speed.",
+    description:
+      "Spin up entire teams in days, not months. Built for enterprise speed.",
   },
   {
     icon: Clock,
     title: "Faster Delivery",
-    description: "Teams that already work together deliver 3x faster than assembled groups.",
+    description:
+      "Teams that already work together deliver 3x faster than assembled groups.",
   },
   {
     icon: Building2,
     title: "Enterprise Ready",
-    description: "SOC2 compliant, NDAs handled, and dedicated account management.",
+    description:
+      "SOC2 compliant, NDAs handled, and dedicated account management.",
   },
-]
+];
 
 export const TabbedSection = () => {
-  const [activeTab, setActiveTab] = useState("freelancers")
-  const isFreelancer = activeTab === "freelancers"
+  const [activeTab, setActiveTab] = useState("freelancers");
+  const isFreelancer = activeTab === "freelancers";
 
   return (
     <section className="relative min-h-screen bg-white overflow-hidden">
@@ -72,7 +91,9 @@ export const TabbedSection = () => {
         <div className="flex flex-col items-center mb-12 sm:mb-16">
           <div className="mb-6 sm:mb-8 animate-fade-in-down">
             <h1 className="text-2xl sm:text-3xl font-bold tracking-tight">
-              <span className="bg-gradient-to-r from-yellow-600 to-amber-500 bg-clip-text text-transparent">HYVE</span>
+              <span className="bg-gradient-to-r from-yellow-600 to-amber-500 bg-clip-text text-transparent">
+                HYVE
+              </span>
             </h1>
           </div>
 
@@ -83,7 +104,9 @@ export const TabbedSection = () => {
                   key={tab.id}
                   onClick={() => setActiveTab(tab.id)}
                   className={`px-4 sm:px-6 py-2 sm:py-2.5 text-sm sm:text-base font-medium rounded-full transition-all duration-200 ${
-                    activeTab === tab.id ? "bg-white text-gray-900 shadow-sm" : "text-gray-600 hover:text-gray-900"
+                    activeTab === tab.id
+                      ? "bg-white text-gray-900 shadow-sm"
+                      : "text-gray-600 hover:text-gray-900"
                   }`}
                 >
                   {tab.label}
@@ -93,7 +116,7 @@ export const TabbedSection = () => {
           </div>
         </div>
 
-        <div className="grid lg:grid-cols-2   items-center max-w-7xl mx-auto">
+        <div className="grid lg:grid-cols-2 gap-8 md:gap-0  items-center max-w-7xl mx-auto">
           <div className="order-2 lg:order-1">
             <div className="mb-4 sm:mb-6 animate-fade-in-up animate-delay-200">
               <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl xl:text-6xl font-bold leading-tight text-gray-900 text-balance">
@@ -111,16 +134,44 @@ export const TabbedSection = () => {
             </p>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4 mb-8 sm:mb-10">
-              {(isFreelancer ? freelancerFeatures : companyFeatures).map((feature, idx) => (
-                <div key={feature.title} className={`animate-fade-in-up animate-delay-${300 + idx * 100}`}>
-                  <FeatureCard icon={feature.icon} title={feature.title} description={feature.description} />
-                </div>
-              ))}
+              {(isFreelancer ? freelancerFeatures : companyFeatures).map(
+                (feature, idx) => (
+                  <motion.div
+                    key={feature.title}
+                    className="group relative"
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.5, delay: 0.2 * idx }}
+                  >
+                    <div className="overflow-hidden h-full rounded-2xl border border-border bg-card hover:bg-[#fff4e5] transition-all duration-300 hover:border-[#f1ac13]/50 hover:shadow-lg hover:shadow-[#f1ac13]/5 hover:-translate-y-1">
+                      <div className="p-6">
+                        {/* ICON */}
+                        <div className="w-12 h-12 rounded-xl bg-[#fff4e5] group-hover:bg-white flex items-center justify-center mb-4 transition-all duration-300 group-hover:scale-110">
+                          <feature.icon className="w-6 h-6 text-[#f1ac13]" />
+                        </div>
+
+                        {/* TITLE */}
+                        <h3 className="text-lg font-semibold text-foreground mb-2">
+                          {feature.title}
+                        </h3>
+
+                        {/* DESCRIPTION */}
+                        <p className="text-sm text-muted-foreground leading-relaxed">
+                          {feature.description}
+                        </p>
+                      </div>
+                    </div>
+                  </motion.div>
+                )
+              )}
             </div>
 
             <div className="flex justify-start animate-fade-in-up animate-delay-600">
               <button className="group relative inline-flex items-center justify-center gap-2 px-6 sm:px-8 py-3 sm:py-4 bg-gray-900 text-white text-sm sm:text-base font-semibold rounded-full overflow-hidden transition-all duration-300 hover:scale-105 hover:shadow-xl">
-                <span className="relative z-10">{isFreelancer ? "Join a Team" : "Find Your Team"}</span>
+                <span className="relative z-10">
+                  {isFreelancer ? "Join a Team" : "Find Your Team"}
+                </span>
                 <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 relative z-10 transition-transform group-hover:translate-x-1" />
               </button>
             </div>
@@ -134,5 +185,5 @@ export const TabbedSection = () => {
         </div>
       </div>
     </section>
-  )
-}
+  );
+};

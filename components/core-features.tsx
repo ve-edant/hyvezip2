@@ -55,14 +55,14 @@ export function CoreFeatures() {
   ];
 
   return (
-    <section className="relative container mx-auto px-4 py-16 sm:py-20 lg:py-24 overflow-hidden">
+    <section className="relative overflow-hidden">
       {/* Background gradient - Fixed positioning */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
-        <div className="absolute bottom-0 right-0 w-[600px] h-[600px] bg-gradient-to-tl from-yellow-200/30 via-yellow-100/10 to-transparent blur-3xl" />
+        <div className="absolute bottom-0 z-5 right-0 w-full md:w-1/2 h-1/2 bg-linear-to-tl from-yellow-200 via-transparent to-transparent" />
       </div>
 
       {/* Content */}
-      <div className="relative z-10">
+      <div className="relative z-10  container mx-auto px-4 py-16 sm:py-20 lg:py-24 ">
         <div className="text-center mb-16">
           <motion.span
             className="inline-block px-4 py-1.5 rounded-full bg-accent text-sm font-medium text-foreground mb-4"
@@ -288,7 +288,8 @@ export function CoreFeatures() {
             <CometCard className="group relative w-full">
               <div className="h-full w-full p-6 rounded-2xl border border-border hover:border-[#f1ac13]/50 bg-gradient-to-br from-card via-card to-[#f1ac13]/5 transition-all duration-300 relative overflow-hidden">
                 {/* Decorative gradient circle */}
-                <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-[#f1ac13]/20 to-transparent rounded-full blur-2xl -mr-16 -mt-16" />
+                <div className="absolute top-0 right-0 w-40 h-40 bg-gradient-to-br from-[#f1ac13]/50 to-transparent rounded-bl-full"></div>
+                <div className="absolute top-4 right-4"><div className="w-3 h-3 rounded-full bg-green-500" style={{ transform: "scale(1.14436)" }}></div></div>
 
                 {/* Top Rated Badge */}
                 <div className="flex items-center gap-2 mb-4">
