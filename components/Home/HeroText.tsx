@@ -65,12 +65,13 @@ const HeroText = () => {
         transition={{ duration: 0.7, delay: 0.3 }}
       >
         <h1 className="text-4xl sm:text-5xl lg:text-6xl font-medium text-gray-900 leading-none text-balance">
-          Freelancing, <br /><span className="text-[#f1ac13]">Built for Teams</span>
+          Freelancing, <br />
+          <span className="text-[#f1ac13]">Built for Teams</span>
         </h1>
       </motion.div>
 
       <motion.p
-        className="text-base sm:text-lg text-black leading-relaxed max-w-xl text-pretty"
+        className="text-md lg:text-lg text-black leading-relaxed max-w-xl text-pretty"
         initial={{ opacity: 0, y: 30 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.7, delay: 0.4 }}
@@ -80,14 +81,28 @@ const HeroText = () => {
       </motion.p>
 
       <motion.div
-        className="flex flex-wrap items-center gap-4"
+        className="
+    flex flex-col md:flex-row
+    items-center md:items-start
+    justify-center md:justify-start
+    gap-4
+    w-full
+  "
         initial={{ opacity: 0, y: 30 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.7, delay: 0.5 }}
       >
         <Button
           variant="outline"
-          className="gap-2 text-gray-700 border-gray-300 hover:bg-gray-50 bg-transparent"
+          className="
+      w-full md:w-auto
+      gap-2
+      text-gray-700
+      border-gray-300
+      bg-transparent
+      hover:bg-gray-50
+      py-3
+    "
         >
           Learn more
           <svg
@@ -106,7 +121,18 @@ const HeroText = () => {
             />
           </svg>
         </Button>
-        <Button className="gap-2 bg-[#f1ac13] hover:bg-[#d99910] text-white shadow-lg shadow-[#f1ac13]/30">
+
+        <Button
+          className="
+      w-full md:w-auto
+      gap-2
+      bg-[#f1ac13]
+      hover:bg-[#d99910]
+      text-white
+      shadow-lg shadow-[#f1ac13]/30
+      py-3
+    "
+        >
           Start now
           <svg
             width="16"
@@ -136,11 +162,15 @@ const HeroText = () => {
           <div className="flex items-center">
             <AnimatedTooltip items={users} />
           </div>
-          <span className="text-sm text-gray-700">500+ active users daily</span>
+          <div className="flex items-start flex-col">
+            <span className="text-sm text-gray-700">
+              500+ active users daily
+            </span>
+            <p className="text-sm text-gray-600">
+              Join the community that grows with us.
+            </p>
+          </div>
         </div>
-        <p className="text-xs text-gray-600">
-          Join the community that grows with us.
-        </p>
       </motion.div>
     </div>
   );

@@ -121,7 +121,7 @@ export const TabbedSection = () => {
             <div className="mb-4 sm:mb-6 animate-fade-in-up animate-delay-200">
               <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl xl:text-6xl font-bold leading-tight text-gray-900 text-balance">
                 Grow{" "}
-                <span className="bg-gradient-to-r from-yellow-600 to-amber-500 bg-clip-text text-transparent">
+                <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#f1ac13] to-yellow-400">
                   Together.
                 </span>
               </h2>

@@ -13,20 +13,10 @@ export function Companies() {
   ]
 
   return (
-    <section className="relative bg-gray-50 py-12 sm:py-16 lg:py-20 px-6 lg:px-12">
+    <section className="relative bg-gray-50 py-12 px-6 lg:pb-12 sm:pb-16 lg:py-20 pt-12 lg:pt-28 ">
       <div className="max-w-7xl mx-auto">
         <motion.div
-          className="text-center mb-10 sm:mb-12"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
-        >
-          <p className="text-sm sm:text-base text-gray-600 font-medium">Trusted by leading teams</p>
-        </motion.div>
-
-        <motion.div
-          className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-8 sm:gap-10 lg:gap-12 items-center"
+          className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-8 sm:gap-10 lg:gap-12 items-center mb-10 sm:mb-12"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
@@ -48,6 +38,15 @@ export function Companies() {
               />
             </motion.div>
           ))}
+        </motion.div>
+        <motion.div
+          className="text-center"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+        >
+          <p className="text-sm sm:text-base text-gray-600 font-medium">Trusted by leading teams</p>
         </motion.div>
       </div>
     </section>

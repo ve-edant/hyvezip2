@@ -1,16 +1,17 @@
 import type { Metadata } from 'next'
 import { Geist, Geist_Mono } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/next'
-import './globals.css'
+import '@/styles/globals.css'
 import { Montserrat } from "next/font/google";
+import Navbar from '@/components/Home/Navbar';
 
 const _geist = Geist({ subsets: ["latin"] });
 const _geistMono = Geist_Mono({ subsets: ["latin"] });
 const montserrat = Montserrat();
 
 export const metadata: Metadata = {
-  title: 'Hyve App',
-  description: 'Hyve Landing Page',
+  title: 'HYVE App',
+  description: 'HYVE Landing Page',
 }
 
 export default function RootLayout({

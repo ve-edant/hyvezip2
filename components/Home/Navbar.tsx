@@ -7,13 +7,13 @@ import Image from "next/image"
 const Navbar = () => {
   return (
     <motion.header
-      className="relative z-20 flex bg-white items-center justify-between px-6 py-5 lg:px-12"
+      className="absolute w-full max-h-20 z-20 flex bg-white items-center justify-between px-6 py-5 lg:px-12"
       initial={{ opacity: 0, y: -20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6 }}
     >
       <div className="flex items-center gap-2">
-        <Image src="/hyve-logo.png" alt="Hyve Logo" width={120} height={40} className="h-8 w-auto" />
+        <Image src="/HYVE-logo.png" alt="HYVE Logo" width={120} height={40} className="h-8 w-auto" />
       </div>
 
       <nav className="hidden md:flex items-center gap-8 text-sm font-medium">

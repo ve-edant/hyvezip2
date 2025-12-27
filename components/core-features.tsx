@@ -12,6 +12,12 @@ import {
 import Image from "next/image";
 import { CometCard } from "./ui/comet-card";
 import { AnimatedTooltip } from "./Home/animated-tooltip";
+import { Montserrat } from "next/font/google";
+
+const montserrat400 = Montserrat({
+  subsets: ["latin"],
+  weight: ["400"],
+});
 
 export function CoreFeatures() {
   const teamMembers = [
@@ -55,7 +61,7 @@ export function CoreFeatures() {
   ];
 
   return (
-    <section className="relative overflow-hidden">
+    <section className={`relative ${montserrat400.className} overflow-hidden`}>
       {/* Background gradient - Fixed positioning */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
         <div className="absolute bottom-0 z-5 right-0 w-full md:w-1/2 h-1/2 bg-linear-to-tl from-yellow-200 via-transparent to-transparent" />
@@ -86,7 +92,7 @@ export function CoreFeatures() {
                   {word}
                 </span>
               ))}
-              <span className="inline-block bg-gradient-to-r from-[#f1ac13] to-[#f1ac13] bg-clip-text text-transparent">
+              <span className="inline-block bg-clip-text text-transparent bg-gradient-to-r from-[#f1ac13] to-yellow-400">
                 Thrive
               </span>
             </div>
@@ -124,8 +130,8 @@ export function CoreFeatures() {
                     Build or Join Teams
                   </h3>
                   <p className="text-sm text-muted-foreground leading-relaxed">
-                    Create your own team with handpicked talent or discover teams
-                    that need your skills.
+                    Create your own team with handpicked talent or discover
+                    teams that need your skills.
                   </p>
                 </div>
 
@@ -164,8 +170,8 @@ export function CoreFeatures() {
                     Work on Large Projects
                   </h3>
                   <p className="text-sm text-muted-foreground leading-relaxed">
-                    Access enterprise-level projects that require diverse skills —
-                    impossible for solo freelancers.
+                    Access enterprise-level projects that require diverse skills
+                    — impossible for solo freelancers.
                   </p>
                 </div>
 
@@ -204,8 +210,8 @@ export function CoreFeatures() {
                     Secure Milestone Payments
                   </h3>
                   <p className="text-sm text-muted-foreground leading-relaxed mb-4">
-                    Funds held in escrow and released as milestones are completed.
-                    No payment anxiety.
+                    Funds held in escrow and released as milestones are
+                    completed. No payment anxiety.
                   </p>
                   <div className="space-y-2">
                     <div className="flex items-center justify-between text-xs">
@@ -279,17 +285,22 @@ export function CoreFeatures() {
 
           {/* Right side - Large card */}
           <motion.div
-            className="group relative"
+            className="group relative h-full" // Add h-full here
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.7 }}
           >
-            <CometCard className="group relative w-full">
-              <div className="h-full w-full p-6 rounded-2xl border border-border hover:border-[#f1ac13]/50 bg-gradient-to-br from-card via-card to-[#f1ac13]/5 transition-all duration-300 relative overflow-hidden">
+            <CometCard className="group relative w-full h-full">
+              <div className="h-full w-full p-6 rounded-2xl border border-border hover:border-[#f1ac13]/50 bg-white transition-all duration-300 relative overflow-hidden">
                 {/* Decorative gradient circle */}
                 <div className="absolute top-0 right-0 w-40 h-40 bg-gradient-to-br from-[#f1ac13]/50 to-transparent rounded-bl-full"></div>
-                <div className="absolute top-4 right-4"><div className="w-3 h-3 rounded-full bg-green-500" style={{ transform: "scale(1.14436)" }}></div></div>
+                <div className="absolute top-4 right-4">
+                  <div
+                    className="w-3 h-3 rounded-full bg-green-500"
+                    style={{ transform: "scale(1.14436)" }}
+                  ></div>
+                </div>
 
                 {/* Top Rated Badge */}
                 <div className="flex items-center gap-2 mb-4">
@@ -340,7 +351,9 @@ export function CoreFeatures() {
                 {/* Growth indicator */}
                 <div className="flex items-center gap-2 px-3 py-2 rounded-lg bg-[#f1ac13]/10 border border-[#f1ac13]/20">
                   <TrendingUp className="w-4 h-4 text-[#f1ac13]" />
-                  <span className="text-sm font-medium text-[#f1ac13]">+32%</span>
+                  <span className="text-sm font-medium text-[#f1ac13]">
+                    +32%
+                  </span>
                   <span className="text-sm text-muted-foreground">
                     earnings this month
                   </span>

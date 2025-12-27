@@ -29,7 +29,7 @@ export function ProblemSolution() {
             </motion.div>
 
             <motion.h2
-              className="text-4xl sm:text-5xl lg:text-6xl font-medium text-gray-900 leading-tight text-balance"
+              className="text-3xl sm:text-4xl lg:text-5xl font-medium text-gray-900 leading-tight text-balance"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -68,10 +68,10 @@ export function ProblemSolution() {
                   "Work is scattered across too many tools",
                 ].map((problem, index) => (
                   <div key={index} className="flex items-start gap-3">
-                    <div className="flex-shrink-0 w-6 h-6 rounded-full bg-[#fef3e2] flex items-center justify-center mt-0.5">
-                      <Frown className="w-4 h-4 text-[#f1ac13]" />
+                    <div className="flex-shrink-0 w-6 h-6 rounded-full flex items-center justify-center">
+                      <Frown className="w-5 h-5 text-[#f1ac13]" />
                     </div>
-                    <p className="text-gray-700 leading-relaxed">{problem}</p>
+                    <p className="text-gray-700 font-normal">{problem}</p>
                   </div>
                 ))}
               </div>
@@ -107,12 +107,12 @@ export function ProblemSolution() {
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.4 }}
             >
-              <h3 className="text-xl font-semibold text-gray-900">Solution</h3>
+              <h3 className="text-lg font-semibold text-gray-900">Solution</h3>
               <div className="flex items-start gap-4">
                 <div className="shrink-0 w-12 h-12 flex items-center justify-center">
                   <Zap className="w-10 h-10 text-[#f1ac13]" />
                 </div>
-                <p className="text-gray-700 leading-relaxed pt-2">
+                <p className="text-gray-700 pt-2">
                   HYVE brings{" "}
                   <span className="font-semibold">freelancers, teams, clients, communication, and payments</span> into
                   one platform — so projects move faster and trust stays intact.
