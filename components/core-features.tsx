@@ -292,7 +292,7 @@ export function CoreFeatures() {
             transition={{ duration: 0.5, delay: 0.7 }}
           >
             <CometCard className="group relative w-full h-full">
-              <div className="h-full w-full p-6 rounded-2xl border border-border hover:border-[#f1ac13]/50 bg-white transition-all duration-300 relative overflow-hidden">
+              <div className="h-full flex flex-col justify-between w-full p-6 rounded-2xl border border-border hover:border-[#f1ac13]/50 bg-white transition-all duration-300 relative overflow-hidden">
                 {/* Decorative gradient circle */}
                 <div className="absolute top-0 right-0 w-40 h-40 bg-gradient-to-br from-[#f1ac13]/50 to-transparent rounded-bl-full"></div>
                 <div className="absolute top-4 right-4">

@@ -52,7 +52,7 @@ export const ProfileCard = () => {
             <p className="text-muted-foreground text-xs sm:text-sm">Full-Stack Developer</p>
             <div className="flex items-center gap-1 mt-1">
               {[...Array(5)].map((_, i) => (
-                <Star key={i} className="w-3 h-3 sm:w-4 sm:h-4 fill-primary text-primary" />
+                <Star key={i} className="w-3 h-3 sm:w-4 sm:h-4 fill-[#f1ac13] text-[#f1ac13]" />
               ))}
               <span className="text-xs sm:text-sm text-muted-foreground ml-1">5.0</span>
             </div>
@@ -88,12 +88,12 @@ export const ProfileCard = () => {
               <span className="text-muted-foreground">Project Progress</span>
               <span className="font-medium text-foreground">8/12 milestones</span>
             </div>
-            <div className="h-2 bg-muted rounded-full overflow-hidden">
+            <div className="h-2 bg-gray-200 rounded-full overflow-hidden">
               <motion.div
                 initial={{ width: 0 }}
                 animate={{ width: "66%" }}
                 transition={{ duration: 1, delay: 0.5, ease: "easeOut" }}
-                className="h-full bg-primary rounded-full"
+                className="h-full bg-[#f1ac13] rounded-full"
               />
             </div>
           </div>
@@ -108,11 +108,11 @@ export const ProfileCard = () => {
             </div>
           </div>
           <div className="text-xl sm:text-2xl font-bold text-foreground">
-            <AnimatedCounter value={24500} prefix="$" />
+            <AnimatedCounter value={64500} prefix="₹" />
           </div>
           <div className="flex items-center gap-2 mt-2 text-xs sm:text-sm text-muted-foreground">
             <Clock className="w-3 h-3 sm:w-4 sm:h-4 flex-shrink-0" />
-            <span className="truncate">Next milestone: $8,200 in 5 days</span>
+            <span className="truncate">Next milestone: ₹21,200 in 5 days</span>
           </div>
         </div>
       </motion.div>

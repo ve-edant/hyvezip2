@@ -47,8 +47,8 @@ export const CompanyCard = () => {
         <div className="flex items-start gap-3 sm:gap-4 mb-4 sm:mb-6">
           <div className="relative w-14 h-14 sm:w-16 sm:h-16 bg-primary/10 rounded-xl sm:rounded-2xl flex items-center justify-center flex-shrink-0">
             <Users className="w-7 h-7 sm:w-8 sm:h-8 text-primary" />
-            <div className="absolute -bottom-1 -right-1 w-4 h-4 sm:w-5 sm:h-5 bg-primary rounded-full border-2 border-card flex items-center justify-center">
-              <Verified className="w-2.5 h-2.5 sm:w-3 sm:h-3 text-primary-foreground" />
+            <div className="absolute -bottom-1 -right-1 w-4 h-4 sm:w-5 sm:h-5 bg-green-500 rounded-full border-2 border-card flex items-center justify-center">
+              <Verified className="w-2.5 h-2.5 sm:w-3 sm:h-3 text-black" />
             </div>
           </div>
           <div className="flex-1 min-w-0">
@@ -59,7 +59,7 @@ export const CompanyCard = () => {
             <div className="flex items-center gap-1 mt-1 flex-wrap">
               <div className="flex items-center gap-1">
                 {[...Array(5)].map((_, i) => (
-                  <Star key={i} className="w-3 h-3 sm:w-4 sm:h-4 fill-primary text-primary" />
+                  <Star key={i} className="w-3 h-3 sm:w-4 sm:h-4 fill-[#f1ac13] text-[#f1ac13]" />
                 ))}
               </div>
               <span className="text-xs sm:text-sm text-muted-foreground ml-1">4.9 (47 projects)</span>
@@ -93,13 +93,13 @@ export const CompanyCard = () => {
           {/* Stats */}
           <div className="grid grid-cols-2 gap-3 sm:gap-4 mt-3 sm:mt-4">
             <div className="text-center">
-              <div className="text-xl sm:text-2xl font-bold text-foreground">
+              <div className="text-xl sm:text-2xl font-bold text-[#f1ac13]">
                 <AnimatedCounter value={23} suffix="%" prefix="+" />
               </div>
               <div className="text-xs text-muted-foreground">Faster delivery</div>
             </div>
             <div className="text-center">
-              <div className="text-xl sm:text-2xl font-bold text-foreground">
+              <div className="text-xl sm:text-2xl font-bold text-[#f1ac13]">
                 <AnimatedCounter value={98} suffix="%" />
               </div>
               <div className="text-xs text-muted-foreground">Client satisfaction</div>
@@ -116,7 +116,7 @@ export const CompanyCard = () => {
             </div>
           </div>
           <div className="text-xl sm:text-2xl font-bold text-foreground">
-            <AnimatedCounter value={185} prefix="$" suffix="/hr" />
+            <AnimatedCounter value={16700} prefix="₹" suffix="/hr" />
           </div>
           <div className="flex items-center gap-2 mt-2 text-xs sm:text-sm text-muted-foreground">
             <Clock className="w-3 h-3 sm:w-4 sm:h-4 flex-shrink-0" />

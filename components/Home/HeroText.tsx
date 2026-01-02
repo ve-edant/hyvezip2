@@ -5,6 +5,8 @@ import { Zap, Activity, CheckCircle2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { AnimatedTooltip } from "@/components/Home/animated-tooltip";
 import { Montserrat } from "next/font/google";
+import { AnimatedShinyText } from "../ui/shiny-text";
+import { AnimatedShinyTextDemo } from "./animated-shiny-text";
 
 const montserrat400 = Montserrat({
   subsets: ["latin"],
@@ -50,13 +52,12 @@ const HeroText = () => {
       className={`${montserrat400.className} space-y-5 lg:space-y-6 order-2 lg:order-1 z-10`}
     >
       <motion.div
-        className="flex items-center gap-2 text-[#f1ac13] font-semibold"
+        className="flex items-center gap-2"
         initial={{ opacity: 0, x: -30 }}
         animate={{ opacity: 1, x: 0 }}
         transition={{ duration: 0.6, delay: 0.2 }}
       >
-        <Zap className="w-4 h-4" />
-        <span>Smarter work. Powered by AI.</span>
+        <AnimatedShinyTextDemo />
       </motion.div>
 
       <motion.div
@@ -153,7 +154,7 @@ const HeroText = () => {
       </motion.div>
 
       <motion.div
-        className="flex flex-col sm:flex-row sm:flex-wrap items-start sm:items-center gap-4 sm:gap-8"
+        className="flex mb-2 flex-col sm:flex-row sm:flex-wrap items-start sm:items-center gap-4 sm:gap-8"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.7, delay: 0.6 }}
@@ -162,11 +163,12 @@ const HeroText = () => {
           <div className="flex items-center">
             <AnimatedTooltip items={users} />
           </div>
-          <div className="flex items-start flex-col">
-            <span className="text-sm text-gray-700">
+          {/* Text */}
+          <div className="flex flex-col gap-0.5 sm:gap-1">
+            <span className="text-xs sm:text-sm md:text-base text-gray-700">
               500+ active users daily
             </span>
-            <p className="text-sm text-gray-600">
+            <p className="text-xs sm:text-sm text-gray-600 leading-snug sm:leading-normal">
               Join the community that grows with us.
             </p>
           </div>

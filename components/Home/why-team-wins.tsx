@@ -43,7 +43,12 @@ export const WhyTeamsWin = () => {
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section className={`${montserrat400.className} py-24 md:py-32 bg-[#fbfbf9]`} ref={ref}>
+    <section className={`${montserrat400.className} relative py-24 md:py-32 bg-white`} ref={ref}>
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        <div className="absolute bottom-0 right-0 w-full md:w-1/2 h-1/2 bg-linear-to-tl from-yellow-200 via-transparent to-transparent" />
+        <div className="absolute top-0 left-0 w-full md:w-1/3 h-1/3 bg-linear-to-br from-yellow-200 via-transparent to-transparent" />
+      </div>
+
       <div className="mx-auto max-w-7xl px-4">
         {/* Section header */}
         <motion.div

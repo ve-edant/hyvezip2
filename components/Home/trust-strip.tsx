@@ -11,7 +11,7 @@ const trustItems = [
 
 export const TrustStrip = () => {
   return (
-    <section className="relative z-10 -mt-8">
+    <section className="relative z-10 -mt-5">
       <InfiniteMovingCards items={trustItems} speed="normal" />
     </section>
   );

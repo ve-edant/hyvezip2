@@ -95,25 +95,29 @@ const HeroSection = () => {
               />
 
               {/* Cards Container */}
-              <div className="absolute inset-0 flex items-center justify-center">
-                <div className="relative top-10 md:top-0 w-full h-full max-w-[90%] sm:max-w-[95%] lg:max-w-5xl mx-auto">
+              <div className="absolute w-full h-full">
+                {/* Container wrapper for centering */}
+                <div className="relative top-5 sm:top-5 md:top-0 lg:top-20 h-full w-full max-w-5xl mx-auto">
                   {/* Left Column - Productivity & Live Activity */}
                   <motion.div
-                    className="absolute left-[5%] sm:left-[8%] lg:left-[10%] top-0 w-[38%] sm:w-[40%] space-y-1 sm:space-y-2"
+                    className="absolute left-[10%] top-0 w-[40%] space-y-1"
                     animate={{
                       y: [0, -12, 0],
                     }}
                     transition={{
                       duration: 6,
-                      repeat: Infinity,
+                      repeat: Number.POSITIVE_INFINITY,
                       ease: "easeInOut",
                     }}
                   >
                     {/* Productivity Card */}
                     <motion.div
-                      className="w-full bg-white/95 backdrop-blur-xl rounded-lg sm:rounded-xl lg:rounded-2xl shadow-lg overflow-hidden border border-gray-100/50 relative z-30"
+                      className="w-full flex justify-end overflow-hidden z-30"
                       initial={{ opacity: 0, y: 50 }}
-                      animate={{ opacity: 1, y: 0 }}
+                      animate={{
+                        opacity: 1,
+                        y: 0,
+                      }}
                       transition={{ duration: 0.8, delay: 0.7 }}
                     >
                       <Image
@@ -121,16 +125,18 @@ const HeroSection = () => {
                         alt="Productivity Chart"
                         width={1372}
                         height={960}
-                        className="w-full h-auto"
-                        priority
+                        className="w-full border border-gray-100 backdrop-blur-xl rounded-2xl shadow-lg md:w-[80%] lg:w-full h-auto"
                       />
                     </motion.div>
 
                     {/* Live Activity Card */}
                     <motion.div
-                      className="w-full bg-white/95 backdrop-blur-xl rounded-lg sm:rounded-xl lg:rounded-2xl shadow-lg overflow-hidden border border-gray-100/50 relative z-30"
+                      className="w-full flex justify-end overflow-hidden z-30"
                       initial={{ opacity: 0, y: 50 }}
-                      animate={{ opacity: 1, y: 0 }}
+                      animate={{
+                        opacity: 1,
+                        y: 0,
+                      }}
                       transition={{ duration: 0.8, delay: 0.9 }}
                     >
                       <Image
@@ -138,47 +144,52 @@ const HeroSection = () => {
                         alt="Live Activity"
                         width={1372}
                         height={1384}
-                        className="w-full h-auto"
-                        priority
+                        className="w-full border border-gray-100 backdrop-blur-xl rounded-2xl shadow-lg md:w-[80%] lg:w-full h-auto"
                       />
                     </motion.div>
                   </motion.div>
 
                   {/* Right Column - AI Insights & Today's Summary */}
                   <motion.div
-                    className="absolute left-[42%] sm:left-[45%] top-[5%] sm:top-[8%] w-[50%] sm:w-[52%] space-y-1 sm:space-y-2"
                     animate={{
-                      y: [0, 12, 0],
+                      y: [0, 12, 0], // Subtle floating
                     }}
                     transition={{
                       duration: 6,
-                      repeat: Infinity,
+                      repeat: Number.POSITIVE_INFINITY,
                       ease: "easeInOut",
+                      repeatDelay: 0,
                     }}
+                    className="absolute left-[45%] top-[8%] w-[52%] space-y-1"
                   >
                     {/* AI Insights Card */}
                     <motion.div
-                      className="w-full bg-white/95 backdrop-blur-xl rounded-lg sm:rounded-xl lg:rounded-2xl shadow-lg overflow-hidden border border-gray-100/50 relative z-30"
+                      className="w-full overflow-hidden z-30"
                       initial={{ opacity: 0, y: 50 }}
-                      animate={{ opacity: 1, y: 0 }}
+                      animate={{
+                        opacity: 1,
+                        y: 0,
+                      }}
                       transition={{ duration: 0.8, delay: 0.8 }}
                       whileHover={{ y: -8, transition: { duration: 0.3 } }}
                     >
                       <Image
                         src="https://framerusercontent.com/images/LfmgjbGlf6N9YfnuOL4yN9xKrc.png?scale-down-to=512&lossless=1&width=1372&height=888"
                         alt="AI Insights"
-                        width={1372}
-                        height={888}
-                        className="w-full h-auto"
-                        priority
+                        width={300}
+                        height={200}
+                        className="w-full border border-gray-100 backdrop-blur-xl rounded-2xl shadow-lg sm:w-[80%] lg:w-full h-auto"
                       />
                     </motion.div>
 
                     {/* Today's Summary Card */}
                     <motion.div
-                      className="w-full bg-white/95 backdrop-blur-xl rounded-lg sm:rounded-xl lg:rounded-2xl shadow-lg overflow-hidden border border-gray-100/50 relative z-30"
+                      className="w-full overflow-hidden z-30"
                       initial={{ opacity: 0, y: 50 }}
-                      animate={{ opacity: 1, y: 0 }}
+                      animate={{
+                        opacity: 1,
+                        y: 0,
+                      }}
                       transition={{ duration: 0.8, delay: 1 }}
                     >
                       <Image
@@ -186,8 +197,7 @@ const HeroSection = () => {
                         alt="Today's Summary"
                         width={1372}
                         height={784}
-                        className="w-full h-auto"
-                        priority
+                        className="w-full border border-gray-100 backdrop-blur-xl rounded-2xl shadow-lg sm:w-[80%] lg:w-full h-auto"
                       />
                     </motion.div>
                   </motion.div>

@@ -9,6 +9,7 @@ import { CoreFeatures } from "@/components/core-features";
 import { TabbedSection } from "@/components/Home/tabbed-section";
 import { StickyScroll } from "@/components/Home/gsap-sticky-scroll";
 import { WhyTeamsWin } from "@/components/Home/why-team-wins";
+import ScrollableSteps from "@/components/Home/scrollble-steps";
 
 export default function Page() {
   return (
@@ -18,7 +19,7 @@ export default function Page() {
       <Companies />
       <ProblemSolution />
       <section className="relative w-full">
-        <StickyScroll />
+        <ScrollableSteps />
       </section>
 
       <CoreFeatures />

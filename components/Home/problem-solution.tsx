@@ -1,7 +1,7 @@
-"use client"
+"use client";
 
-import { motion } from "framer-motion"
-import { Frown, Zap } from "lucide-react"
+import { motion } from "framer-motion";
+import { Frown, Zap } from "lucide-react";
 import { Montserrat } from "next/font/google";
 
 const montserrat400 = Montserrat({
@@ -9,10 +9,11 @@ const montserrat400 = Montserrat({
   weight: ["400"],
 });
 
-
 export function ProblemSolution() {
   return (
-    <section className={`${montserrat400.className} relative bg-white py-16 sm:py-20 lg:py-24 px-6 lg:px-12`}>
+    <section
+      className={`${montserrat400.className} relative bg-white py-16 sm:py-20 lg:py-24 px-6 lg:px-12`}
+    >
       <div className="max-w-7xl mx-auto">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16">
           {/* Left Column */}
@@ -35,7 +36,8 @@ export function ProblemSolution() {
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.1 }}
             >
-              Work breaks when <span className="text-[#f1ac13]">teams aren't connected</span>
+              Work breaks when{" "}
+              <span className="text-[#f1ac13]">teams aren't connected</span>
             </motion.h2>
 
             <motion.p
@@ -79,23 +81,27 @@ export function ProblemSolution() {
 
             {/* Divider */}
             <div className="flex items-center justify-center py-2">
-              <div className="w-10 h-10 rounded-full bg-gray-100 flex items-center justify-center">
-                <svg
-                  width="20"
-                  height="20"
-                  viewBox="0 0 20 20"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="text-gray-400"
-                >
-                  <path
-                    d="M10 4V16M10 16L14 12M10 16L6 12"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  />
-                </svg>
+              <div className="flex items-center w-full">
+                <div className="flex-1 h-px border border-dashed border-gray-400"></div>
+                <div className="mx-4 flex-shrink-0 w-8 h-8 rounded-full bg-gray-100 border border-gray-400 flex items-center justify-center">
+                  <svg
+                    width="20"
+                    height="20"
+                    viewBox="0 0 20 20"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                    className="text-gray-400"
+                  >
+                    <path
+                      d="M10 4V16M10 16L14 12M10 16L6 12"
+                      stroke="currentColor"
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    />
+                  </svg>
+                </div>
+                <div className="flex-1 h-px border border-dashed border-gray-400"></div>
               </div>
             </div>
 
@@ -114,8 +120,11 @@ export function ProblemSolution() {
                 </div>
                 <p className="text-gray-700 pt-2">
                   HYVE brings{" "}
-                  <span className="font-semibold">freelancers, teams, clients, communication, and payments</span> into
-                  one platform — so projects move faster and trust stays intact.
+                  <span className="font-semibold">
+                    freelancers, teams, clients, communication, and payments
+                  </span>{" "}
+                  into one platform — so projects move faster and trust stays
+                  intact.
                 </p>
               </div>
             </motion.div>
@@ -123,5 +132,5 @@ export function ProblemSolution() {
         </div>
       </div>
     </section>
-  )
+  );
 }
