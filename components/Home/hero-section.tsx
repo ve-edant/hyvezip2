@@ -9,7 +9,7 @@ const HeroSection = () => {
   return (
     <section className="relative w-full min-h-screen bg-white">
       {/* Hero Content Container */}
-      <div className="relative h-screen w-full flex flex-col">
+      <div className="relative h-screen w-full flex flex-col items-center justify-center">
         {/* Main Content Area */}
         <div className="flex-1 relative z-10 px-4 sm:px-6 lg:px-12 pt-4 sm:pt-6 lg:pt-12 pb-4 sm:pb-6 lg:pb-12">
           {/* Top Gradient Overlay */}
