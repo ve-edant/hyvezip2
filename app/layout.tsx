@@ -4,6 +4,7 @@ import { Analytics } from '@vercel/analytics/next'
 import '@/styles/globals.css'
 import { Montserrat } from "next/font/google";
 import Navbar from '@/components/Home/Navbar';
+import { Footer } from '@/components/layout/Footer';
 
 const _geist = Geist({ subsets: ["latin"] });
 const _geistMono = Geist_Mono({ subsets: ["latin"] });
@@ -22,8 +23,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${montserrat.className} font-montserrat antialiased`}>
+        <Navbar />
         {children}
         <Analytics />
+        <Footer />
       </body>
     </html>
   )

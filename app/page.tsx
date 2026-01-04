@@ -10,18 +10,17 @@ import { TabbedSection } from "@/components/Home/tabbed-section";
 import { StickyScroll } from "@/components/Home/gsap-sticky-scroll";
 import { WhyTeamsWin } from "@/components/Home/why-team-wins";
 import ScrollableSteps from "@/components/Home/scrollble-steps";
+import VerticalTabs from "@/components/Home/stacked-list";
 
 export default function Page() {
   return (
     <div className="relative min-h-screen overflow-hidden bg-white">
-      <Navbar />
       <HeroSection />
       <Companies />
       <ProblemSolution />
-      <section className="relative w-full">
-        <ScrollableSteps />
+      <section className="relative w-full flex justify-center">
+        <VerticalTabs />
       </section>
-
       <CoreFeatures />
       <TabbedSection />
       <WhyTeamsWin />

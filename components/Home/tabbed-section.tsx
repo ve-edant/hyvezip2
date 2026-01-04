@@ -16,6 +16,7 @@ import { FeatureCard } from "./FeatureCard";
 import { ProfileCard } from "./ProfileCard";
 import { CompanyCard } from "./CompanyCard";
 import { motion } from "framer-motion";
+import { HoverBorderGradient } from "../ui/hover-border-gradient";
 
 const tabs = [
   { id: "freelancers", label: "For Freelancers" },
@@ -98,14 +99,14 @@ export const TabbedSection = () => {
           </div>
 
           <div className="w-full flex justify-center animate-fade-in-up animate-delay-100">
-            <div className="inline-flex items-center gap-1 p-1 bg-gray-100 rounded-full">
+            <div className="inline-flex items-center gap-1 p-1  bg-[#fff4e5] rounded-full">
               {tabs.map((tab) => (
                 <button
                   key={tab.id}
                   onClick={() => setActiveTab(tab.id)}
                   className={`px-4 sm:px-6 py-2 sm:py-2.5 text-sm sm:text-base font-medium rounded-full transition-all duration-200 ${
                     activeTab === tab.id
-                      ? "bg-white text-gray-900 shadow-sm"
+                      ? "bg-white text-gray-900 shadow-sm border border-[#f1ac13]"
                       : "text-gray-600 hover:text-gray-900"
                   }`}
                 >
@@ -168,12 +169,16 @@ export const TabbedSection = () => {
             </div>
 
             <div className="flex justify-start animate-fade-in-up animate-delay-600">
-              <button className="group relative inline-flex items-center justify-center gap-2 px-6 sm:px-8 py-3 sm:py-4 bg-gray-900 text-white text-sm sm:text-base font-semibold rounded-full overflow-hidden transition-all duration-300 hover:scale-105 hover:shadow-xl">
+              <HoverBorderGradient
+                containerClassName="rounded-full"
+                as="button"
+                className="group relative inline-flex items-center justify-center bg-[#f1ac13] text-white space-x-2"
+              >
                 <span className="relative z-10">
                   {isFreelancer ? "Join a Team" : "Find Your Team"}
                 </span>
                 <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 relative z-10 transition-transform group-hover:translate-x-1" />
-              </button>
+              </HoverBorderGradient>
             </div>
           </div>
 

@@ -71,7 +71,7 @@ export function CoreFeatures() {
       <div className="relative z-10  container mx-auto px-4 py-16 sm:py-20 lg:py-24 ">
         <div className="text-center mb-16">
           <motion.span
-            className="inline-block px-4 py-1.5 rounded-full bg-accent text-sm font-medium text-foreground mb-4"
+            className="inline-block px-4 py-1.5 rounded-full bg-[#fff4e5] text-sm font-medium text-[#1e1a16] mb-4"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
