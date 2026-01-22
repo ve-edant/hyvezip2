@@ -1,5 +1,5 @@
 "use client";
-
+// Autoplaying Carousel 
 import React, { useState, useEffect, useCallback } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import { cn } from "@/lib/utils";

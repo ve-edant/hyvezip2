@@ -1,4 +1,5 @@
 "use client";
+// GSAP Sticky Scroll Component
 import { useEffect, useRef, useState } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";

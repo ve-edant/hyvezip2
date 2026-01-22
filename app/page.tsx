@@ -7,10 +7,8 @@ import { Companies } from "@/components/Home/companies";
 import { ProblemSolution } from "@/components/Home/problem-solution";
 import { CoreFeatures } from "@/components/core-features";
 import { TabbedSection } from "@/components/Home/tabbed-section";
-import { StickyScroll } from "@/components/Home/gsap-sticky-scroll";
 import { WhyTeamsWin } from "@/components/Home/why-team-wins";
-import ScrollableSteps from "@/components/Home/scrollble-steps";
-import VerticalTabs from "@/components/Home/stacked-list";
+import HowItWorks from "@/components/Home/HowItWorks";
 
 export default function Page() {
   return (
@@ -19,7 +17,7 @@ export default function Page() {
       <Companies />
       <ProblemSolution />
       <section className="relative w-full flex justify-center">
-        <VerticalTabs />
+        <HowItWorks />
       </section>
       <CoreFeatures />
       <TabbedSection />

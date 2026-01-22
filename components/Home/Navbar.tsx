@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -8,15 +8,35 @@ import Image from "next/image";
 
 const Navbar = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    let ticking = false;
+
+    const handleScroll = () => {
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          setIsScrolled(window.scrollY > 20);
+          ticking = false;
+        });
+        ticking = true;
+      }
+    };
+
+    handleScroll(); // Check initial scroll position
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   const toggleSidebar = () => setIsSidebarOpen(!isSidebarOpen);
 
   const navLinks = [
     { label: "For freelancers", href: "#freelancers" },
     { label: "For companies", href: "#companies" },
-    { label: "Blog", href: "#blog" },
-    { label: "Support", href: "#support" },
-    { label: "About", href: "#about" },
+    { label: "About", href: "/about" },
+    { label: "Blog", href: "/blog" },
+    { label: "FAQs", href: "/faq" },
+    { label: "Support", href: "/support" },
   ];
 
   const sidebarVariants = {
@@ -69,52 +89,90 @@ const Navbar = () => {
 
   return (
     <>
-      <motion.header
-        className="fixed w-full max-h-20 z-50 flex bg-white/80 backdrop-blur-md items-center justify-between px-6 py-5 lg:px-12 shadow-sm"
+      <motion.div
+        className="fixed w-full z-50 flex justify-center pointer-events-none"
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6 }}
+        transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
       >
-        <div className="flex items-center gap-2">
-          <Image
-            src="/HYVE-logo.png"
-            alt="HYVE Logo"
-            width={120}
-            height={40}
-            className="h-8 w-auto"
-          />
-        </div>
-
-        <nav className="hidden md:flex items-center gap-8 text-sm font-medium">
-          {navLinks.map((link) => (
-            <a
-              key={link.label}
-              href={link.href}
-              className="text-gray-700 hover:text-gray-900 transition-colors relative group"
-            >
-              {link.label}
-              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#f1ac13] transition-all duration-300 group-hover:w-full"></span>
-            </a>
-          ))}
-        </nav>
-
-        <div className="hidden md:flex items-center gap-4 text-sm font-medium">
-          <Button className="border border-[#f1ac13] bg-white hover:bg-[#fde7b6] text-[#f1ac13] shadow-lg shadow-[#f1ac13]/30 transition-all duration-300">
-            Login
-          </Button>
-          <Button className="bg-[#f1ac13] hover:bg-[#d99910] text-white shadow-lg shadow-[#f1ac13]/30 transition-all duration-300">
-            Sign Up
-          </Button>
-        </div>
-
-        <button
-          onClick={toggleSidebar}
-          className="md:hidden p-2 hover:bg-gray-100 rounded-lg transition-colors"
-          aria-label="Toggle menu"
+        <motion.header
+          className="w-full flex items-center justify-between px-6 lg:px-12 shadow-sm pointer-events-auto"
+          initial={false}
+          animate={{
+            maxWidth: isScrolled ? "80rem" : "100%",
+            backgroundColor: isScrolled ? "rgba(255, 255, 255, 0.95)" : "rgba(255, 255, 255, 0.8)",
+            paddingTop: isScrolled ? "0.75rem" : "1.25rem",
+            paddingBottom: isScrolled ? "0.75rem" : "1.25rem",
+            marginTop: isScrolled ? "1rem" : "0rem",
+            borderRadius: isScrolled ? "1rem" : "0rem",
+          }}
+          transition={{
+            duration: 0.4,
+            ease: [0.22, 1, 0.36, 1],
+          }}
+          style={{
+            backdropFilter: isScrolled ? "blur(16px)" : "blur(12px)",
+            WebkitBackdropFilter: isScrolled ? "blur(16px)" : "blur(12px)",
+          }}
         >
-          <Menu className="w-6 h-6 text-gray-700" />
-        </button>
-      </motion.header>
+          <div className="flex items-center gap-2">
+            <motion.div
+              animate={{
+                height: isScrolled ? 24 : 32,
+              }}
+              transition={{
+                duration: 0.4,
+                ease: [0.22, 1, 0.36, 1],
+              }}
+            >
+              <Image
+                src="/hyve-logo.png"
+                alt="HYVE Logo"
+                width={120}
+                height={40}
+                className="h-full w-auto"
+                priority
+              />
+            </motion.div>
+          </div>
+
+          <nav className="hidden md:flex items-center gap-8 text-sm font-medium">
+            {navLinks.map((link) => (
+              <a
+                key={link.label}
+                href={link.href}
+                className="text-gray-700 hover:text-gray-900 transition-colors relative group"
+              >
+                {link.label}
+                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#f1ac13] transition-all duration-300 group-hover:w-full"></span>
+              </a>
+            ))}
+          </nav>
+
+          <div className="hidden md:flex items-center gap-4 text-sm font-medium">
+            <Button 
+              className="border border-[#f1ac13] bg-white hover:bg-[#fde7b6] text-[#f1ac13] shadow-lg shadow-[#f1ac13]/30 transition-all duration-300"
+              aria-label="Login to your account"
+            >
+              Login
+            </Button>
+            <Button 
+              className="bg-[#f1ac13] hover:bg-[#d99910] text-white shadow-lg shadow-[#f1ac13]/30 transition-all duration-300"
+              aria-label="Create a new account"
+            >
+              Sign Up
+            </Button>
+          </div>
+
+          <button
+            onClick={toggleSidebar}
+            className="md:hidden p-2 hover:bg-gray-100 rounded-lg transition-colors"
+            aria-label="Toggle menu"
+          >
+            <Menu className="w-6 h-6 text-gray-700" />
+          </button>
+        </motion.header>
+      </motion.div>
 
       <AnimatePresence>
         {isSidebarOpen && (
@@ -176,10 +234,16 @@ const Navbar = () => {
                   animate={{ y: 0, opacity: 1 }}
                   transition={{ delay: 0.5 }}
                 >
-                  <Button className="w-full border border-[#f1ac13] bg-white hover:bg-[#fde7b6] text-[#f1ac13] shadow-lg shadow-[#f1ac13]/30 transition-all duration-300">
+                  <Button 
+                    className="w-full border border-[#f1ac13] bg-white hover:bg-[#fde7b6] text-[#f1ac13] shadow-lg shadow-[#f1ac13]/30 transition-all duration-300"
+                    aria-label="Login to your account"
+                  >
                     Login
                   </Button>
-                  <Button className="w-full bg-[#f1ac13] hover:bg-[#d99910] text-white shadow-lg shadow-[#f1ac13]/30 transition-all duration-300">
+                  <Button 
+                    className="w-full bg-[#f1ac13] hover:bg-[#d99910] text-white shadow-lg shadow-[#f1ac13]/30 transition-all duration-300"
+                    aria-label="Create a new account"
+                  >
                     Sign Up
                   </Button>
                 </motion.div>
