@@ -13,7 +13,6 @@ import {
 } from "@/components/ui/accordion"
 import Navbar from "@/components/Home/Navbar"
 import Link from "next/link"
-import { useSearchParams } from "next/navigation"
 import { Suspense } from "react"
 import { Montserrat } from "next/font/google";
 
@@ -116,7 +115,6 @@ const categories = [
 
 export default function FAQPage() {
   const [searchQuery, setSearchQuery] = useState("")
-  const searchParams = useSearchParams();
 
   const filteredCategories = categories.map(category => ({
     ...category,
